@@ -1,0 +1,62 @@
+Una variable puntero sirve para acceder a través de ella a otra variable.
+
+El valor de la variable puntero será la dirección de memoria de la otra variable. 
+
+Los punteros contienen direcciones de memoria. 
+
+    type * nombre;
+
+nombre es una variable puntero que apuntará a una variable que tiene tipo type. 
+
+Se inicia con nullptr
+    int * punt = nullptr; 
+    
+El operador & devuelve la dirección de una variable a la que se aplica. 
+
+    int i; 
+    cout << &i; // muestra la dirección de memoria de i
+    
+Entonces, a un puntero le podemos asignar la dirección de memoria de una variable del mismo tipo el tipo del puntero.
+
+    int i = 5; 
+    int * punt = nullptr; 
+    punt = &i
+
+Ahora podemos acceder al valor de la variable i de forma indirecta llamando a la variable puntero que almacena su dirección de memoria, para ello usamos * (operador monario prefijo)
+    
+        cout << *punt; 
+
+Podemos crear una definición de tipo que engloble a todos los punteros de tipo entero por ejemplo o todos los de tipo char.  
+    
+    typedef int * intPtr; //intPtr son punteros a   enteros
+   
+    intPtr punt2 = &x;  // es lo mismo que: int * punt2 = &x; 
+Algunas de ellas son: 
+
+    typedef int * intPtr;
+    typedef char * charPtr;
+    typedef double * doublePtr;
+    typedef tRegistro * tRegistroPtr;
+
+También pueden apuntar a estructuras 
+typedef struct tRegistro
+    {
+        int codigo; 
+        string nombre; 
+        double sueldo; 
+    };
+
+    tRegistro registro;
+    registro.codigo = 123;
+    registro.nombre = "Juan";
+    registro.sueldo = 2543;
+
+    tRegistro * punteror = &registro;
+    
+    //Para acceder: 
+    punteror -> codigo; // equiv (*puntero).codigo
+    punteror -> nombre; // equiv (*puntero).nombre
+    punteror -> sueldo; // equiv (*puntero).sueldo 
+    
+CUIDAD!!  (*puntero).codigo /= *puntero.codigo
+en el segundo caso se esperaria que cogido fuera un campo de estructura pero de tipo puntero. 

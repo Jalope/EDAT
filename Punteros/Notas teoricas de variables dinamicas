@@ -1,0 +1,11 @@
+El operador "new" 
+
+    new tipo; 
+
+Reserva memoria del montón para una variable de
+ese tipo y devuelve la primera dirección de memoria
+utilizada, que debe ser asignada a un puntero.
+
+    tipo * puntero = new tipo; 
+
+
