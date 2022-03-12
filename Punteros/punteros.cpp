@@ -16,7 +16,14 @@ int main(){
     int * punt = nullptr; 
     punt = &j; 
 
-    int * punt2 = &j; 
+    int * punt22 = &j; 
+
+    int var; 
+    // int * punteroI = nullptr;
+    int * punteroI = &var; 
+    var = 5; 
+
+    cout << "La variable de nombre var está almacenada en: " << &var << "Podemos llamar a su valor directamente: " << var << "o podemos hacer una llamada a la variable que apunta a su dirección de memoría: " << *punteroI << endl; 
 
     cout << "La variable j tiene como valor " << j<< " y su dirección de memoria es: " << &j << endl;
 
@@ -36,7 +43,33 @@ int main(){
     */
     typedef int * intPtr; //intPtr son punteros a   enteros
    
-    intPtr punt2 = &x;  // es lo mismo que: int * punt2 = &x; 
+    intPtr punt21 = &x;  // es lo mismo que: int * punt2 = &x; 
+
+    typedef double * doublePtr; 
+
+    double var_double = 2.7;
+    doublePtr punt_double = &var_double;
+
+    struct coche // Los struct ya no hace falta que tenga la palabra typedeff delante.
+    {
+        int matricula;
+        string color; 
+        int pid; 
+    };
+
+    coche tesla; 
+    tesla.matricula = 12345;
+    tesla.color = "Rojo";
+    tesla.pid = 01;
+
+    coche * puntero_coche = &tesla; 
+
+    cout << "Mi coche tiene matricula: " << puntero_coche -> matricula << " y es de color: " << puntero_coche -> color << endl; 
+     
+
+
+    
+
 
     typedef struct tRegistro
     {
