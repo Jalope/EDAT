@@ -8,4 +8,7 @@ utilizada, que debe ser asignada a un puntero.
 
     tipo * puntero = new tipo; 
 
+    int * p = new int;  
+    *p = 12; 
+    
 
