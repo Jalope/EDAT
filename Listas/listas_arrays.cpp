@@ -13,9 +13,11 @@ const int DEFAULT_CAPACITY = 10;
 
 class ListArray {
     public: 
+        //metodos constructores con 0 elementos (vacía), capacidad inicial de hasta la constante default_capacity y creación de la varible puntero con el array. 
         ListArray(int initial_capacity)
             : num_elems(0), capacity(initial_capacity), elems (new string[capacity]) {}
-
+        
+        //constructor por defecto. genera una lista vacía llamando a initicial_capacity con DEFAULT_CAPACITY
         ListArray()
             : ListArray(DEFAULT_CAPACITY) {}
         
@@ -39,7 +41,15 @@ class ListArray {
             assert(num_elems > 0);
             return elems[num_elems - 1];
         }
-        string at(int index) const {
+
+        // Version constante. Si asignamos m = lista.at(1) 
+        string & at(int index) const {
+            assert(0 <= index && index <= num_elems -1);
+            return elems[index];
+        }
+
+        //
+        string & at(int index) {
             assert(0 <= index && index <= num_elems -1);
             return elems[index];
         }
@@ -161,6 +171,8 @@ void ListArray :: display() const {
 int main(){
     //declaramos un objeto de la clase
     ListArray l; 
+
+    l.display();
 
     //introducimos elementos en el array
     l.push_back("David"); 
