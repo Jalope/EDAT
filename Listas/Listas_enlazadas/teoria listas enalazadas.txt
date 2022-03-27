@@ -1,0 +1,23 @@
+Una lista enlazada es una secuencia de nodos, en la que cada nodo contiene: 
+    - Un campo con información arbitraria 
+    - Un puntero al siguiente nodo de la secuencia 
+
+Implementaremos listas enlazadas SIMPLES, pues cada nodo sólo tiene un puntero que apunta al siguiente nodo de la lista (y no al anterior).
+
+Cuando un nodo no tiene sucesor contiene el puntero nulo (nullptr)
+
+struct Node {
+    string value; 
+    Node *next; 
+}; 
+
+Node *tres = new Node { "Tres", nullptr }; 
+Node *dos = new Node { "Dos", tres }; 
+Node *uno = new Node { "Uno", dos }; 
+
+
+/* tenemos la lista
+["Uno", "Dos", "Tres"] 
+donde cada espacio contiene la palabra que corresponda y una "flecha" apuntando al siguiente espacio
+*/
+

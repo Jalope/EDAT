@@ -5,7 +5,7 @@ using namespace std;
 
 /*Tipos de longitud: 
     - Capacidad de una lista: tamaño del array que contiene los elementos.
-    - Tamaño de una lista: Número de osiciones ocupada por elementos. 
+    - Tamaño de una lista: Número de posiciones ocupada por elementos. 
 siempre se cumple: 
     tamaño <= capacidad 
 */
@@ -20,7 +20,13 @@ class ListArray {
         //constructor por defecto. genera una lista vacía llamando a initicial_capacity con DEFAULT_CAPACITY
         ListArray()
             : ListArray(DEFAULT_CAPACITY) {}
-        
+        /* El segundo constructor lo que hace es llamar al primero tomando initial_capacity = DEFAULT_CAPACITY. Esto lo podemos resumir en un unico constructuro 
+        ListArray(int initial_capacity = DEFAULT_CAPCITY)
+            : num_elems(0), capacity(initial_capacity), elems (new string[capacity]) {}
+        estamos diciendo que el constructor recibe un parametro opcional, si este parametro no se indica, se tomara como valor por defecto DEFAULT_CAPACITY
+        */
+
+        //Destructor 
         ~ListArray() {delete[] elems;}
 
         void push_back(const string &elem);
@@ -42,25 +48,69 @@ class ListArray {
             return elems[num_elems - 1];
         }
 
-        // Version constante. Si asignamos m = lista.at(1) 
-        string & at(int index) const {
+        /*Creamos un metodo que devuelve el elemento que está en la posicion pasada como parametro. Si lo hacemos como está implementado en aT (version primera), tenemos un metodo constante que no va a mutar nuestra lista. Pero, si lo hacemos como en at (segunda version) tenemos algo mucho más potente y peligroso. Pues este metodo no sólo devuelve el elemento que está en la posicion index, si no que nos permite mutarlo. El tipo de la función es "string & at..." es decir la salida es una REFERENCIA a un string, es decir, además de mirar estamos creando un hilo. Por ejemplo si hacemos: 
+        l = ["David", "Maria", "Elvira"]
+            string m = l.at[1]
+            m = "Javier"
+        l = ["David", "Javier", "Elvira"]
+        HEMOS CAMBIADO LA LISTA!! 
+        
+        Si esto lo hacemos con aT, el resultado visual es el mismo, pero la lista no habrá cambiado: 
+        l = ["David", "Maria", "Elvira"]
+            string m = l.aT[1]
+            m = "Javier"
+        l = ["David", "Maria", "Elvira"]  
+        ver imagen: "Modficar elemento lista por referencia"*/ 
+        
+        /* 
+        string aT(int index) const {
             assert(0 <= index && index <= num_elems -1);
             return elems[index];
         }
+     
+        
+        string & at(int index) {
+            assert(0 <= index && index <= num_elems -1);
+            return elems[index];
+        }*/
 
-        //
+        /* Si ahora en otro metodo pasamos la lista como algo constante y utilizamos at que está trabajando con referencias obtendremos errores. Por ejemplo con la función contar_caracteres. Esta debe llamar a la version cte at. */
+
+        /* La solución es tener dos versiones. La primera es constante y devuelve una referencia constante (la referencia no puede ser modificada desde fuera). La segunda, será una versión no contaste devolviendo una referencia no constante. El compilador sabrá diferenciar. Si por ejemplo hacemos <lista.at(1) = "Javier">, sabrá que tiene que llamar al no constante. 
+        
+        Finalmente hay que tener cuidado con esto. Si se obtiene una referencia a un elemento de la lista, debe hacerse uso de esa referencia ANTES de añadir, eliminar, etc. otros elementos de la lista. Para asi, no enerar llamadas a cosas borradas. Por ejemplo:  
+        string &primero = l.front(); 
+
+        l.push_back("David"); 
+
+        primero = "Javier Francisco" --> Hace referencia a una memoria liberada dentro del metodo push_back. ERROR!! 
+
+        Lo correcto sería 
+        l.front() = "Javier Francisco"  */
+        
+        //Versión cte. 
+        const string & at(int index) const {
+            assert(0 <= index && index <= num_elems -1);
+            return elems[index];
+        }
+        //Versión NO cte. 
         string & at(int index) {
             assert(0 <= index && index <= num_elems -1);
             return elems[index];
         }
 
-        void display() const; 
 
+        void display() const;
+ 
 
     private: 
+        //Definimios 3 atributos: 
+
         int num_elems; //(tamaño) longitud de la lista. INDICE DE LA PRIMERA POSICION VACIA.(La lista va de 0 a n-1 tendrá longitud n).
-        int capacity; //(capacidad)
-        //string elems[MAX_CAPACITY]; variable de tipo array con un límite de capacidad. Los elementos en este caso son sólo de tipo cadena de caracteres. La definimos con un puntero
+        
+        int capacity; // tamaño del array que contra los elementos de la lista (capacidad)
+        
+        //PUNTERO AL ARRAY.  string elems[MAX_CAPACITY]; variable de tipo puntero a array con un límite de capacidad. Los elementos en este caso son sólo de tipo cadena de caracteres. La definimos con un puntero
         string *elems;
 
         void resize_array(int new_capacity);
@@ -156,6 +206,15 @@ void ListArray :: pop_front() {
     {e = x_i}   */
 
 //Adicional: 
+
+int contar_caracteres(const ListArray &l) {
+    int suma = 0; 
+    for (int i = 0; i < l.size(); i++) {
+        suma += l.at(i).length(); 
+        }
+            return suma; 
+    }
+
 
 void ListArray :: display() const {
     cout << "["; 
