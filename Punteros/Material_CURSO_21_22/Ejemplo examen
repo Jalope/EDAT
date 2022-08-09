@@ -1,0 +1,36 @@
+Ejercicio1.(4 puntos)
+  Apartado 1:Escribe, en C++, las definiciones de tipos y los prototipos de las
+    funciones/procedimientos para implementar
+    secuencias de un tipo cualquiera.
+
+    A modo de ejemplo, en el caso  de los enteros queremos escribir código como el siguiente:
+
+        secuencia<int> s = secuencia_vacia<int>();
+        for(int i = 0;i<10;i++){
+            s.insertar(i);
+        }
+
+  Apartado 2: Escribe una función que indique si una secuencia está ordenada.
+              Supónemos que está definido el operador < para argumentos del
+              tipo de los elementos de la secuencia. Sólo podemos usar las operaciones abstractas del tipo secuencia.
+  Apartado 3: Escribe un procedimiento en c++ que tome como argumentos dos secuencias s1 y s2
+              ordenadas de elementos del mismo tipo y las modifique de forma que:
+              ->s1 debe ser la secuencia ordenada que contiene los elementos de s1 y s2
+              ->s2 debe quedar vacía.
+              Debes escribir esta función de forma que sea lo más eficiente posible (puede hacerse en tiempo lineal, en la suma de
+              las longitudes de las dos secuencias) y sin crear más memoria dinámica que la usada por s1 y s2 (para ello debes usar
+              la implementación concreta del TAD secuencia).
+
+Ejercicio2:(6 puntos)
+   Implementa en C++ las colas con prioridad sobre un tipo cualquiera que tenga definido el
+  operador >. Puedes suponer que no insertaremos elementos con la misma prioridad.(en un examen real pondría la especificación del libro).
+   Utiliza para ello un montículo de máximos, pero implementado en un arbol binario.
+
+Notas:
+-debes indicar el coste en el caso peor de todas las operaciones que implementes.
+-Se aconseja (sobre todo en el segundo ejercicio) hacer un "diseño descendente":
+ implementa  las operaciones pedidas usando funciones auxiliares que te faciliten la tarea, a lo largo de ese proceso escribe los prototipos y
+descripción de las funciones auxiliares, termina escribiendo la implementación de las operaciones auxiliares.
+-para cada ejercicio escribe un ejemplo de programa principal que pruebe la implementación, dicho programa debe liberar todo la memoria dinámica que
+utilice.
+

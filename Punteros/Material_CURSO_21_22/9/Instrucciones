@@ -1,0 +1,22 @@
+Semana 8 (25 de Octubre)
+
+    Solución al ejercicio de evaluar expresiones. Archivo
+    pilas de char Archivo
+    pilas de float Archivo
+    Solución con templates
+    pilas con templates Archivo
+    expresiones con templates Archivo
+    Implementación de las secuencias
+
+    https://cvmdp.ucm.es/moodle/pluginfile.php/2066845/mod_label/intro/secuencias.cpp
+
+    Ejercicio para el laboratorio.
+    Escribir un procedimiento que ordene una secuencia.
+
+    Notas:
+        el parámetro T debe  implementar el operador <= (libro). Cumpliendo la especificación:
+
+    especificación del parámetro
+        Se valorará la eficiencia de la ordenación (tanto en tiempo como en memoria ocupada).
+        Se valorará que la ordenación sea estable. La ordenación se dice estable si dados cualesquiera dos elementos e1, e2 en la secuencia t.q e1<=e2 y e2<=e1 se tiene que e1 y e2 mantienen su posición relativa en la secuencia ordenada.
+    Versión de quicksort para un array. (Notar que no es estable).

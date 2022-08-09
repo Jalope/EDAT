@@ -1,0 +1,11 @@
+Sesión 1(laboratorio): explicaciones sobre el primer ejercicio en C++ (entrega)
+
+Sesión 2: los arrays como punteros
+                 Factorización en primos con memoria "dinámica", creamos el array del tamaño adecuado: solución
+
+Sesión 3: plantearemos como ejercicio mejorar de la factorización en primos con memoria dinámica para no tener que calcular antes el número de primos (quedará para la sesión4). solución
+                 Especificaciones con ecuaciones condicionales y funciones parciales (errores).
+
+Sesión 4 (laboratorio): Especificaciones con ecuaciones condicionales y funciones parciales (errores).
+
+    Tipos, prototipos y main para las matrices dinámicas sin límite de elementos distintos del valor por defecto. Tipos y prototipos

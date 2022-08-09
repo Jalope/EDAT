@@ -1,0 +1,8 @@
+Laboratorio del 25 de NOviembre
+Una tabla sencilla. Tabla de frecuencias.
+
+Debes implementar la tabla de frecuencias de los caracteres que aparecen en un texto.
+
+    Comienza por completar el código del archivo: tabla_frec_esquema.cpp,.  Para compilarlo necesitas abb.cpp y secuencias.cpp  o sustituirlos por tu código para los árboles y secuencias. 
+    A continuación cambia el main para que haga la tabla de frecuencias de los caracteres de un archivo.
+    Haz funciones para valorar el desequilibrio de los árboles que resultan procesando varios archivos de texto. (aparte de valorar si resultan equilibrados o no, es interesante  ver "cuanto de desequilibrados resultan").

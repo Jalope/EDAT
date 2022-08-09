@@ -1,0 +1,11 @@
+Para terminar el trabajo previo: 
+
+    Archivo con los tipos del tipo de datos matrizKK en C++, además hay un método para mostrar su contenido y otro para leer una matrizkk de un archivo. matrizKK.cpp 
+    Archivo con un ejemplo de matrizKK mat.txt.
+    Tu trabajo consiste en escribir las funciones suma y traspuesta. 
+
+Documentación que quizá te ayude: resumenCap4
+
+Versión más "modular" del archivo: matrizKK.cpp
+
+Otra versión de matrizKK.cpp con una función sobre  la lista de entradas para añadir ordenadamente una entrada, esto simplifica mucho la traspuesta.

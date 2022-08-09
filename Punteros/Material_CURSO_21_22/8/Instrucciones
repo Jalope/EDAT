@@ -1,0 +1,13 @@
+Lunes: especificación del TAD cola.Indicaciones sobre la implementación
+
+Martes y Miércoles: ejercicios sobre pilas y colas.
+
+    Tipo tabla para el ejercicio de las expresiones y esquema del main
+    Pilas de char y pilas de floats. La próxima semana aprenderemos a definir las pilas de "cualquier cosa" por medio de los ''templates'
+
+Jueves (Laboratorio): implementación del TAD cola.
+
+
+
+    Pilas con estructura enlazada. Archivo
+    Pilas con estructura enlazada 2

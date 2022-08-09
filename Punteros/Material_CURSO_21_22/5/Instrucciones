@@ -1,0 +1,7 @@
+Solución con ordenación de la lista.  (Hay algún error de gestión de la memoria, ¿puedés detectarlo?)
+Sesión 1 (Laboratorio): Listas enlazadas, otro uso de los punteros.
+Sesión 2: Ejercicios sobre especificaciones.
+
+    Dar modelos de la especificación BOOLEANOS con conjuntos subyacentes B0 = {0},B1 = {0,1} y B2 = {0,1,true,false}. Razonar si los modelos son iniciales o no. 
+
+    Dar una especificación de los enteros tomando como constructoras: cero, suc y cambiar_signo.
